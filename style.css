@@ -44,7 +44,7 @@
     --bg-gradient: radial-gradient(ellipse at 20% 20%, rgba(80, 70, 229, 0.04) 0%, transparent 50%),
                    radial-gradient(ellipse at 80% 80%, rgba(230, 69, 122, 0.03) 0%, transparent 50%),
                    var(--bg-primary);
-    --bg-card-gradient: var(--bg-card);
+    --bg-card-gradient: linear-gradient(135deg, rgba(80, 70, 229, 0.03), var(--bg-card) 40%);
     --text-primary: #0c0c18;
     --text-secondary: #52527a;
     --text-muted: #a8a8c0;
