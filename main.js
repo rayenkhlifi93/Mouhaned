@@ -21,13 +21,17 @@
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
     }
-    themeToggle.textContent = savedTheme === 'light' ? 'Mode Sombre' : 'Mode Clair';
+    setThemeIcons(savedTheme === 'light');
 
     themeToggle.addEventListener('click', () => {
         const isLight = document.body.classList.toggle('light-mode');
-        themeToggle.textContent = isLight ? 'Mode Sombre' : 'Mode Clair';
+        setThemeIcons(isLight);
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
+
+    function setThemeIcons(isLight) {
+        themeToggle.classList.toggle('show-sun', !isLight);
+    }
 
     // ===== HAMBURGER MENU =====
     const hamburger = document.getElementById('hamburger');
@@ -55,9 +59,6 @@
 
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-
-        // Header
-        header.classList.toggle('scrolled', scrollY > 80);
 
         // Scroll-to-top button
         scrollTop.classList.toggle('visible', scrollY > 400);
