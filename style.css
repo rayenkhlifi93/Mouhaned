@@ -10,11 +10,11 @@
 
 :root {
     --bg-primary: #000000;
-    --bg-secondary: #0d1722;
-    --bg-card: #152331;
-    --bg-glass: rgba(13, 23, 34, 0.82);
-    --bg-gradient: linear-gradient(to left, #000000, #152331);
-    --bg-card-gradient: var(--bg-card);
+    --bg-secondary: #0a0f1a;
+    --bg-card: rgba(7, 11, 18, 0.65);
+    --bg-glass: rgba(7, 11, 18, 0.65);
+    --bg-gradient: linear-gradient(135deg, #0a0f1a 0%, #000000 100%);
+    --bg-card-gradient: linear-gradient(135deg, rgba(10, 15, 26, 0.55), var(--bg-card) 45%);
     --text-primary: #eeeef8;
     --text-secondary: #72728e;
     --text-muted: #38384e;
@@ -189,62 +189,14 @@ header {
     will-change: padding;
 }
 
-/* Glass substrate */
+/* Card-style substrate */
 header::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--bg-glass);
-    backdrop-filter: blur(60px) saturate(180%);
-    -webkit-backdrop-filter: blur(60px) saturate(180%);
+    background: var(--bg-card-gradient);
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     z-index: -2;
-}
-
-/* Fluid reflection animation overlay */
-header::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    opacity: 0.5;
-    mix-blend-mode: plus-lighter;
-    background: linear-gradient(
-        105deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.03) 25%,
-        rgba(255, 255, 255, 0.08) 37%,
-        rgba(255, 255, 255, 0.03) 50%,
-        transparent 60%
-    );
-    background-size: 300% 100%;
-    animation: liquidShift 6s ease-in-out infinite;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-@keyframes liquidShift {
-    0%   { background-position: 0% 0%; }
-    50%  { background-position: 100% 0%; }
-    100% { background-position: 0% 0%; }
-}
-
-/* Top edge light refraction line */
-header .nav-edge {
-    position: absolute;
-    top: 0;
-    left: 5%;
-    right: 5%;
-    height: 1px;
-    z-index: 1;
-    pointer-events: none;
-    background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.06) 20%,
-        rgba(255, 255, 255, 0.12) 50%,
-        rgba(255, 255, 255, 0.06) 80%,
-        transparent 100%
-    );
 }
 
 header.scrolled {
