@@ -9,10 +9,12 @@
 }
 
 :root {
-    --bg-primary: #050507;
-    --bg-secondary: #0a0a10;
-    --bg-card: #111118;
-    --bg-glass: rgba(10, 10, 16, 0.82);
+    --bg-primary: #000000;
+    --bg-secondary: #0d1722;
+    --bg-card: #152331;
+    --bg-glass: rgba(13, 23, 34, 0.82);
+    --bg-gradient: linear-gradient(to left, #000000, #152331);
+    --bg-card-gradient: var(--bg-card);
     --text-primary: #eeeef8;
     --text-secondary: #72728e;
     --text-muted: #38384e;
@@ -39,6 +41,10 @@
     --bg-secondary: #f1f1f8;
     --bg-card: #ffffff;
     --bg-glass: rgba(249, 249, 253, 0.85);
+    --bg-gradient: radial-gradient(ellipse at 20% 20%, rgba(80, 70, 229, 0.04) 0%, transparent 50%),
+                   radial-gradient(ellipse at 80% 80%, rgba(230, 69, 122, 0.03) 0%, transparent 50%),
+                   var(--bg-primary);
+    --bg-card-gradient: var(--bg-card);
     --text-primary: #0c0c18;
     --text-secondary: #52527a;
     --text-muted: #a8a8c0;
@@ -79,7 +85,7 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg-primary);
+    background: var(--bg-gradient);
     color: var(--text-primary);
     line-height: 1.65;
     overflow-x: hidden;
@@ -98,6 +104,19 @@ body::before {
     pointer-events: none;
     z-index: 9999;
     opacity: 0.4;
+}
+
+/* ── GLOBAL GRID BACKGROUND ── */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(108, 99, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    z-index: 0;
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -176,8 +195,8 @@ header::before {
     position: absolute;
     inset: 0;
     background: var(--bg-glass);
-    backdrop-filter: blur(25px) saturate(180%);
-    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    backdrop-filter: blur(60px) saturate(180%);
+    -webkit-backdrop-filter: blur(60px) saturate(180%);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
     z-index: -2;
@@ -476,42 +495,6 @@ nav {
     overflow: hidden;
 }
 
-/* Gradient orbs */
-.about::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -15%;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(108, 99, 255, 0.12) 0%, transparent 65%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.about::after {
-    content: '';
-    position: absolute;
-    bottom: -10%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 107, 157, 0.08) 0%, transparent 65%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-/* Subtle grid */
-.about-grid-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(108, 99, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-}
-
 .about-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -559,6 +542,7 @@ nav {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    white-space: nowrap;
 }
 
 .about-text p {
@@ -720,9 +704,7 @@ nav {
 /* ── STATS ── */
 .stats {
     padding: 7rem 2.5rem;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    background: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -747,8 +729,8 @@ nav {
 .stat-item {
     padding: 2.5rem 1rem;
     border-radius: var(--radius);
-    background: var(--bg-card);
     border: 1px solid var(--border);
+    background: var(--bg-card-gradient);
     transition: transform var(--transition-spring), box-shadow var(--transition), border-color var(--transition);
     position: relative;
     overflow: hidden;
@@ -880,7 +862,6 @@ nav {
 
 .gallery-item {
     position: relative;
-    background: var(--bg-card);
     border-radius: var(--radius);
     overflow: hidden;
     border: 1px solid var(--border);
@@ -891,7 +872,30 @@ nav {
 }
 
 .gallery-item.visible {
-    /* no-op: items are always visible */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card-gradient);
+    aspect-ratio: 0.72;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow var(--transition),
+                border-color var(--transition);
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .gallery-item:hover {
@@ -968,7 +972,7 @@ nav {
 
 .gallery-info {
     padding: 1.5rem;
-    background: var(--bg-card);
+    background: transparent;
     border-top: 1px solid var(--border);
 }
 
@@ -1034,8 +1038,7 @@ nav {
 .contact {
     padding: 8rem 2.5rem;
     text-align: center;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border);
+    background: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -1072,7 +1075,7 @@ nav {
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: var(--bg-card);
+    background: var(--bg-card-gradient);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.2rem 1.8rem;
@@ -1158,7 +1161,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-card);
+    background: var(--bg-card-gradient);
     border: 1px solid var(--border);
     color: var(--text-secondary);
     text-decoration: none;
@@ -1247,12 +1250,11 @@ nav {
 
 /* ── FOOTER ── */
 footer {
-    background: var(--bg-secondary);
+    background: transparent;
     padding: 1.2rem 2.5rem;
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.84rem;
-    border-top: 1px solid var(--border);
     letter-spacing: 0.3px;
     line-height: 1.8;
 }
@@ -1500,10 +1502,10 @@ a:focus-visible {
 }
 
 .service-card {
-    background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 2.5rem 2rem;
+    background: var(--bg-card-gradient);
     transition: transform var(--transition-spring),
                 box-shadow var(--transition),
                 border-color var(--transition);
@@ -1576,7 +1578,6 @@ a:focus-visible {
     padding: 9rem 2.5rem;
     max-width: 800px;
     margin: 0 auto;
-    border-top: 1px solid var(--border);
     text-align: center;
 }
 

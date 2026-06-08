@@ -123,9 +123,10 @@
         { sel: '.about-image', dir: 'zoom', delay: 200 },
         { sel: '.stat-item', dir: 'up', delay: 0 },
         { sel: '.section-header', dir: 'up', delay: 0 },
-        { sel: '.contact h2', dir: 'up', delay: 0 },
-        { sel: '.contact p', dir: 'up', delay: 150 },
-        { sel: '.social-links', dir: 'up', delay: 250 },
+        { sel: '.service-card', dir: 'up', delay: 100 },
+        { sel: '.contact-card', dir: 'up', delay: 100 },
+        { sel: '.contact-social-row', dir: 'up', delay: 200 },
+        { sel: '.contact-cta', dir: 'up', delay: 300 },
         { sel: 'footer', dir: 'up', delay: 0 },
     ];
 
