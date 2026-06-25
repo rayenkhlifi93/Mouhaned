@@ -9,23 +9,23 @@
 }
 
 :root {
-    --bg-primary: #000000;
-    --bg-secondary: #0a0f1a;
-    --bg-card: rgba(7, 11, 18, 0.65);
-    --bg-glass: rgba(7, 11, 18, 0.65);
-    --bg-gradient: linear-gradient(135deg, #0a0f1a 0%, #000000 100%);
-    --bg-card-gradient: linear-gradient(135deg, rgba(10, 15, 26, 0.55), var(--bg-card) 45%);
-    --text-primary: #eeeef8;
-    --text-secondary: #72728e;
-    --text-muted: #38384e;
-    --accent: #6C63FF;
-    --accent-hover: #8b85ff;
-    --accent-glow: rgba(108, 99, 255, 0.45);
-    --accent-soft: rgba(108, 99, 255, 0.1);
-    --accent-2: #ff6b9d;
-    --accent-2-glow: rgba(255, 107, 157, 0.35);
+    --bg-primary: #1c0f0f;
+    --bg-secondary: #2a2828;
+    --bg-card: rgba(42, 40, 40, 0.65);
+    --bg-glass: rgba(42, 40, 40, 0.65);
+    --bg-gradient: linear-gradient(135deg, #2a2828 0%, #1c0f0f 100%);
+    --bg-card-gradient: linear-gradient(135deg, rgba(42, 40, 40, 0.55), var(--bg-card) 45%);
+    --text-primary: #f5f5f5;
+    --text-secondary: #b0b0b0;
+    --text-muted: #707070;
+    --accent: #d4af37;
+    --accent-hover: #ffdd44;
+    --accent-glow: rgba(212, 175, 55, 0.45);
+    --accent-soft: rgba(212, 175, 55, 0.12);
+    --accent-2: #ffdd44;
+    --accent-2-glow: rgba(255, 221, 68, 0.35);
     --border: rgba(255, 255, 255, 0.065);
-    --border-accent: rgba(108, 99, 255, 0.38);
+    --border-accent: rgba(212, 175, 55, 0.38);
     --shadow: rgba(0, 0, 0, 0.85);
     --transition: 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     --transition-fast: 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -37,30 +37,28 @@
 }
 
 .light-mode {
-    --bg-primary: #f9f9fd;
-    --bg-secondary: #f1f1f8;
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
     --bg-card: #ffffff;
-    --bg-glass: rgba(249, 249, 253, 0.85);
-    --bg-gradient: radial-gradient(ellipse at 20% 20%, rgba(80, 70, 229, 0.04) 0%, transparent 50%),
-                   radial-gradient(ellipse at 80% 80%, rgba(230, 69, 122, 0.03) 0%, transparent 50%),
-                   var(--bg-primary);
-    --bg-card-gradient: linear-gradient(135deg, rgba(80, 70, 229, 0.03), var(--bg-card) 40%);
-    --text-primary: #0c0c18;
-    --text-secondary: #52527a;
-    --text-muted: #a8a8c0;
-    --accent: #5046e5;
-    --accent-hover: #6C63FF;
-    --accent-glow: rgba(80, 70, 229, 0.28);
-    --accent-soft: rgba(80, 70, 229, 0.09);
-    --accent-2: #e6457a;
-    --accent-2-glow: rgba(230, 69, 122, 0.22);
+    --bg-glass: rgba(255, 255, 255, 0.85);
+    --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    --bg-card-gradient: linear-gradient(135deg, rgba(212, 175, 55, 0.03), var(--bg-card) 40%);
+    --text-primary: #1c0f0f;
+    --text-secondary: #6b5e5e;
+    --text-muted: #a09898;
+    --accent: #d4af37;
+    --accent-hover: #b8960e;
+    --accent-glow: rgba(212, 175, 55, 0.25);
+    --accent-soft: rgba(212, 175, 55, 0.08);
+    --accent-2: #c49a20;
+    --accent-2-glow: rgba(196, 154, 32, 0.20);
     --border: rgba(0, 0, 0, 0.08);
-    --border-accent: rgba(80, 70, 229, 0.22);
+    --border-accent: rgba(212, 175, 55, 0.22);
     --shadow: rgba(0, 0, 0, 0.1);
 }
 
 .light-mode .logo {
-    color: #0c0c18;
+    color: #1c0f0f;
 }
 
 .light-mode .nav-links a {
@@ -68,8 +66,8 @@
 }
 
 .light-mode .nav-links a:hover {
-    background: rgba(80, 70, 229, 0.08);
-    color: #0c0c18;
+    background: var(--accent-soft);
+    color: #1c0f0f;
 }
 
 .light-mode .nav-links a.active {
