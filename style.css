@@ -445,6 +445,16 @@ nav {
     overflow: hidden;
 }
 
+.experience-section {
+    padding: 9rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-section .section-header {
+    margin-bottom: 3.5rem;
+}
+
 .about-content {
     max-width: 1200px;
     margin: 0 auto;
