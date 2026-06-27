@@ -424,24 +424,6 @@
     }
     setLanguage(currentLang);
 
-    // ===== HAMBURGER MENU =====
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        mobileNav.classList.toggle('open');
-        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-    });
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('open');
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-    });
-
     // ===== HEADER SCROLL =====
     const header = document.getElementById('header');
     const scrollTop = document.getElementById('scrollTop');
