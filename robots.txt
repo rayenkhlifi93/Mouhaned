@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mouhanedaouadi.com/sitemap.xml
+Sitemap: https://mouvision.me/sitemap.xml
