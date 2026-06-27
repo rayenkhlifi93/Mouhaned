@@ -1,6 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
-*,
+﻿*,
 *::before,
 *::after {
     margin: 0;
@@ -487,6 +485,7 @@ nav {
     background: var(--accent);
 }
 
+.about-text h1,
 .about-text h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(3rem, 6.5vw, 5rem);
@@ -497,6 +496,7 @@ nav {
     color: var(--text-primary);
 }
 
+.about-text h1 .highlight,
 .about-text h2 .highlight {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
     -webkit-background-clip: text;
