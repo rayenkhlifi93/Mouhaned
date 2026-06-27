@@ -58,10 +58,11 @@
 
     <!-- Loading Screen -->
     <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-logo">mouvision.me</div>
+        <div class="loading-logo"><span>m</span><span>o</span><span>u</span><span>v</span><span>i</span><span>s</span><span>i</span><span>o</span><span>n</span><span>.</span><span>m</span><span>e</span></div>
         <div class="loading-bar-container">
-            <div class="loading-bar"></div>
+            <div class="loading-bar" id="loadingBar"></div>
         </div>
+        <div class="loading-percent" id="loadingPercent">0%</div>
     </div>
 
     <!-- Mobile Nav Overlay -->
@@ -79,14 +80,19 @@
         <nav>
             <a href="./" class="logo" id="logoLink">mouvision.me</a>
             <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#services">Expertise</a></li>
-                <li><a href="#pricing">Tarifs</a></li>
-                <li><a href="#gallery">Portfolio</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Let's Talk</a></li>
+                <li><a href="#about" data-i18n="nav.about">About Me</a></li>
+                <li><a href="#services" data-i18n="nav.expertise">Expertise</a></li>
+                <li><a href="#pricing" data-i18n="nav.tarifs">Tarifs</a></li>
+                <li><a href="#gallery" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+                <li><a href="#contact" data-i18n="nav.talk">Let's Talk</a></li>
             </ul>
             <div class="nav-right">
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn active" data-lang="fr">FR</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                </div>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                     <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"/>
@@ -110,19 +116,19 @@
     <section class="about" id="about">
         <div class="about-content">
             <div class="about-text">
-                <h1><span class="highlight">Videographer &amp;</span> Photographer</h1>
-                <p>Trilingual content creator (FR / AR / EN) with 4+ years in graphic design, video production, photography, and digital media. I've collaborated with national and international initiatives, bringing creative and strategic expertise to amplify their visibility and impact.</p>
-                <p>Official photographer for multiple sports teams, skilled in capturing dynamic, professional imagery that elevates athletic performance and identity. As a media manager for festivals and sports clubs, I combine artistic vision with strategic communication to produce engaging, trend-aware content.</p>
+                <h1><span class="highlight" data-i18n="about.titleHighlight">Videographer &amp;</span> <span data-i18n="about.titleRest">Photographer</span></h1>
+                <p data-i18n="about.desc1">Trilingual content creator (FR / AR / EN) with 4+ years in graphic design, video production, photography, and digital media. I've collaborated with national and international initiatives, bringing creative and strategic expertise to amplify their visibility and impact.</p>
+                <p data-i18n="about.desc2">Official photographer for multiple sports teams, skilled in capturing dynamic, professional imagery that elevates athletic performance and identity. As a media manager for festivals and sports clubs, I combine artistic vision with strategic communication to produce engaging, trend-aware content.</p>
                 <div class="skills">
-                    <span class="skill-tag">Graphic Design</span>
-                    <span class="skill-tag">Video Production</span>
-                    <span class="skill-tag">Photography</span>
-                    <span class="skill-tag">Public Speaking</span>
-                    <span class="skill-tag">Leadership</span>
+                    <span class="skill-tag" data-i18n="about.skill1">Graphic Design</span>
+                    <span class="skill-tag" data-i18n="about.skill2">Video Production</span>
+                    <span class="skill-tag" data-i18n="about.skill3">Photography</span>
+                    <span class="skill-tag" data-i18n="about.skill4">Public Speaking</span>
+                    <span class="skill-tag" data-i18n="about.skill5">Leadership</span>
                     <span class="skill-tag">FR / AR / EN</span>
                 </div>
                 <a href="#gallery" class="about-cta">
-                    <span>View my work</span>
+                    <span data-i18n="about.cta">View my work</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.5">
                         <path d="M5 12h14M12 5l7 7-7 7" />
@@ -146,25 +152,25 @@
                 <div class="col">
                     <div class="stat-item">
                         <div class="stat-number" data-target="100">0</div>
-                        <div class="stat-label">Projects Completed</div>
+                        <div class="stat-label" data-i18n="stats.projects">Projects Completed</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="stat-item">
                         <div class="stat-number" data-target="6">0</div>
-                        <div class="stat-label">Years of Experience</div>
+                        <div class="stat-label" data-i18n="stats.experience">Years of Experience</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="stat-item">
                         <div class="stat-number" data-target="2000">0</div>
-                        <div class="stat-label">Photos Taken</div>
+                        <div class="stat-label" data-i18n="stats.photos">Photos Taken</div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="stat-item">
                         <div class="stat-number" data-target="200">0</div>
-                        <div class="stat-label">Happy Clients</div>
+                        <div class="stat-label" data-i18n="stats.clients">Happy Clients</div>
                     </div>
                 </div>
             </div>
@@ -174,9 +180,9 @@
     <!-- Experience Section -->
     <section class="experience-section" id="experience">
         <div class="section-header">
-            <span class="section-label">Career</span>
-            <h2 class="section-title">Experience</h2>
-            <p class="gallery-subtitle">Professional roles that shaped my creative journey</p>
+            <span class="section-label" data-i18n="experience.label">Career</span>
+            <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+            <p class="gallery-subtitle" data-i18n="experience.subtitle">Professional roles that shaped my creative journey</p>
         </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
@@ -188,9 +194,9 @@
                                 <path d="M2 20h20" stroke="var(--accent)"/>
                             </svg>
                         </div>
-                        <h3>Media Manager – Bellaregia Festival</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;">Tunisia · 2021–2023</p>
-                        <p style="font-size: 0.9rem;">Supervised digital and visual content strategy for one of Tunisia's leading cultural festivals.</p>
+                        <h3 data-i18n="exp1.title">Media Manager – Bellaregia Festival</h3>
+                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp1.date">Tunisia · 2021–2023</p>
+                        <p style="font-size: 0.9rem;" data-i18n="exp1.desc">Supervised digital and visual content strategy for one of Tunisia's leading cultural festivals.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -201,9 +207,9 @@
                                 <path d="M2 20h20" stroke="var(--accent)"/>
                             </svg>
                         </div>
-                        <h3>Media Manager – Chemtou Festival</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;">Tunisia · 2022–2024</p>
-                        <p style="font-size: 0.9rem;">Produced multimedia content and managed social media engagement for this historic festival.</p>
+                        <h3 data-i18n="exp2.title">Media Manager – Chemtou Festival</h3>
+                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp2.date">Tunisia · 2022–2024</p>
+                        <p style="font-size: 0.9rem;" data-i18n="exp2.desc">Produced multimedia content and managed social media engagement for this historic festival.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -215,9 +221,9 @@
                                 <path d="M6 20v-6" stroke="var(--accent)"/>
                             </svg>
                         </div>
-                        <h3>Media Manager – Mouloudia Boussalem Volleyball</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;">Tunisia · 2022–2023</p>
-                        <p style="font-size: 0.9rem;">Managed media operations during the African championship season for this top-tier club.</p>
+                        <h3 data-i18n="exp3.title">Media Manager – Mouloudia Boussalem Volleyball</h3>
+                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp3.date">Tunisia · 2022–2023</p>
+                        <p style="font-size: 0.9rem;" data-i18n="exp3.desc">Managed media operations during the African championship season for this top-tier club.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -229,9 +235,9 @@
                                 <path d="M6 20v-6" stroke="var(--accent)"/>
                             </svg>
                         </div>
-                        <h3>Media Manager – US Boussalem</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;">Tunisia · 2022–2023</p>
-                        <p style="font-size: 0.9rem;">Coordinated digital communication and media strategy for the sports club.</p>
+                        <h3 data-i18n="exp4.title">Media Manager – US Boussalem</h3>
+                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp4.date">Tunisia · 2022–2023</p>
+                        <p style="font-size: 0.9rem;" data-i18n="exp4.desc">Coordinated digital communication and media strategy for the sports club.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -242,9 +248,9 @@
                                 <path d="M12 6v6l4 2" stroke="var(--accent)"/>
                             </svg>
                         </div>
-                        <h3>Photographer – Olympique Béja</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;">Tunisia · 2025–2026</p>
-                        <p style="font-size: 0.9rem;">Official photographer for one of Tunisia's premier football clubs, capturing match action and team imagery.</p>
+                        <h3 data-i18n="exp5.title">Photographer – Olympique Béja</h3>
+                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp5.date">Tunisia · 2025–2026</p>
+                        <p style="font-size: 0.9rem;" data-i18n="exp5.desc">Official photographer for one of Tunisia's premier football clubs, capturing match action and team imagery.</p>
                     </div>
                 </div>
             </div>
@@ -254,9 +260,9 @@
     <!-- Certifications Section -->
     <section class="testimonials" id="certifications">
         <div class="section-header">
-            <span class="section-label">Learning</span>
-            <h2 class="section-title">Certifications &amp; Training</h2>
-            <p class="gallery-subtitle">Continuous growth through recognized programs</p>
+            <span class="section-label" data-i18n="certs.label">Learning</span>
+            <h2 class="section-title" data-i18n="certs.title">Certifications &amp; Training</h2>
+            <p class="gallery-subtitle" data-i18n="certs.subtitle">Continuous growth through recognized programs</p>
         </div>
         <div style="max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.8rem; text-align: left;">
             <div class="contact-card" style="width: 100%; max-width: 100%;">
@@ -264,8 +270,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong>Graphic Design &amp; Podcasting</strong>
-                    <span>Munathara Initiative</span>
+                    <strong data-i18n="cert1.title">Graphic Design &amp; Podcasting</strong>
+                    <span data-i18n="cert1.org">Munathara Initiative</span>
                 </div>
             </div>
             <div class="contact-card" style="width: 100%; max-width: 100%;">
@@ -273,8 +279,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong>Community Media &amp; Social Change</strong>
-                    <span>Munathara &amp; El-Katiba (US Embassy)</span>
+                    <strong data-i18n="cert2.title">Community Media &amp; Social Change</strong>
+                    <span data-i18n="cert2.org">Munathara &amp; El-Katiba (US Embassy)</span>
                 </div>
             </div>
             <div class="contact-card" style="width: 100%; max-width: 100%;">
@@ -282,8 +288,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong>Climate Advocacy</strong>
-                    <span>Forum of Federations &amp; National Observatory</span>
+                    <strong data-i18n="cert3.title">Climate Advocacy</strong>
+                    <span data-i18n="cert3.org">Forum of Federations &amp; National Observatory</span>
                 </div>
             </div>
             <div class="contact-card" style="width: 100%; max-width: 100%;">
@@ -291,8 +297,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong>Leadership Program</strong>
-                    <span>Tunisia88</span>
+                    <strong data-i18n="cert4.title">Leadership Program</strong>
+                    <span data-i18n="cert4.org">Tunisia88</span>
                 </div>
             </div>
             <div class="contact-card" style="width: 100%; max-width: 100%;">
@@ -300,8 +306,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong>Women Empowerment – MENA</strong>
-                    <span>Stages in Jordan, Morocco &amp; Tunisia</span>
+                    <strong data-i18n="cert5.title">Women Empowerment – MENA</strong>
+                    <span data-i18n="cert5.org">Stages in Jordan, Morocco &amp; Tunisia</span>
                 </div>
             </div>
             <div class="contact-card" style="width: 100%; max-width: 100%; border-color: var(--border-accent);">
@@ -309,8 +315,8 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong style="color: var(--accent);">Peace Ambassador</strong>
-                    <span>Peace First</span>
+                    <strong style="color: var(--accent);" data-i18n="cert6.title">Peace Ambassador</strong>
+                    <span data-i18n="cert6.org">Peace First</span>
                 </div>
             </div>
         </div>
@@ -319,9 +325,9 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="section-header">
-            <span class="section-label">What I Do</span>
-            <h2 class="section-title">My Services</h2>
-            <p class="gallery-subtitle">Professional visual storytelling tailored to your vision</p>
+            <span class="section-label" data-i18n="services.label">What I Do</span>
+            <h2 class="section-title" data-i18n="services.title">My Services</h2>
+            <p class="gallery-subtitle" data-i18n="services.subtitle">Professional visual storytelling tailored to your vision</p>
         </div>
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
@@ -333,8 +339,8 @@
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                             </svg>
                         </div>
-                        <h3>Editing Videos Maker</h3>
-                        <p>Professional video editing with cinematic transitions, color grading, and precise storytelling to bring your footage to life.</p>
+                        <h3 data-i18n="services.videoTitle">Editing Videos Maker</h3>
+                        <p data-i18n="services.videoDesc">Professional video editing with cinematic transitions, color grading, and precise storytelling to bring your footage to life.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -345,8 +351,8 @@
                                 <circle cx="12" cy="13" r="4" />
                             </svg>
                         </div>
-                        <h3>Photos Shooter</h3>
-                        <p>High-quality photography for events, portraits, and commercial projects with a keen eye for light and composition.</p>
+                        <h3 data-i18n="services.photoTitle">Photos Shooter</h3>
+                        <p data-i18n="services.photoDesc">High-quality photography for events, portraits, and commercial projects with a keen eye for light and composition.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -357,8 +363,8 @@
                                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
                             </svg>
                         </div>
-                        <h3>Graphic Designer</h3>
-                        <p>Creative graphic design services including branding, thumbnails, social media visuals, and custom artwork.</p>
+                        <h3 data-i18n="services.graphicTitle">Graphic Designer</h3>
+                        <p data-i18n="services.graphicDesc">Creative graphic design services including branding, thumbnails, social media visuals, and custom artwork.</p>
                     </div>
                 </div>
             </div>
@@ -367,10 +373,10 @@
 
     <!-- Pricing Section -->
     <section class="pricing" id="pricing">
-        <div class="section-header">
-            <span class="section-label">Tarifs</span>
-            <h2 class="section-title">Liste des Tarifs 2026</h2>
-            <p class="gallery-subtitle">Mariages • Fiançailles • Événements</p>
+            <div class="section-header">
+            <span class="section-label" data-i18n="pricing.label">Tarifs</span>
+            <h2 class="section-title" data-i18n="pricing.title">Liste des Tarifs 2026</h2>
+            <p class="gallery-subtitle" data-i18n="pricing.subtitle">Mariages • Fiançailles • Événements</p>
         </div>
 
         <!-- Package Cards -->
@@ -378,46 +384,46 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mb-5">
                 <div class="col">
                     <div class="pricing-card" data-reveal="up" data-delay="0">
-                        <h3 class="pricing-name">Collection ÉCLAT</h3>
+                        <h3 class="pricing-name" data-i18n="pricing.eclat">Collection ÉCLAT</h3>
                         <div class="pricing-amount">750 DT</div>
-                        <p class="pricing-sub">L'essentiel pour capturer chaque émotion.</p>
+                        <p class="pricing-sub" data-i18n="pricing.eclatSub">L'essentiel pour capturer chaque émotion.</p>
                         <ul class="pricing-features">
-                            <li>Photos illimitées HD</li>
-                            <li>Film complet 4K UHD</li>
-                            <li>Highlight Film cinématographique</li>
+                            <li data-i18n="pricing.eclatF1">Photos illimitées HD</li>
+                            <li data-i18n="pricing.eclatF2">Film complet 4K UHD</li>
+                            <li data-i18n="pricing.eclatF3">Highlight Film cinématographique</li>
                         </ul>
-                        <a href="#contact" class="pricing-btn">Book Now</a>
+                        <a href="#contact" class="pricing-btn" data-i18n="pricing.bookNow">Book Now</a>
                     </div>
                 </div>
                 <div class="col">
                     <div class="pricing-card pricing-featured" data-reveal="up" data-delay="100">
-                        <div class="pricing-badge">Populaire</div>
-                        <h3 class="pricing-name">Collection HÉRITAGE</h3>
+                        <div class="pricing-badge" data-i18n="pricing.popular">Populaire</div>
+                        <h3 class="pricing-name" data-i18n="pricing.heritage">Collection HÉRITAGE</h3>
                         <div class="pricing-amount">1 450 DT</div>
-                        <p class="pricing-sub">L'équilibre parfait entre élégance et émotion.</p>
+                        <p class="pricing-sub" data-i18n="pricing.heritageSub">L'équilibre parfait entre élégance et émotion.</p>
                         <ul class="pricing-features">
-                            <li>Toutes les prestations ÉCLAT</li>
-                            <li>Shooting extérieur</li>
-                            <li>Getting Ready</li>
-                            <li>3 Reels Instagram / TikTok</li>
-                            <li>Photobook Premium (30×30 cm)</li>
+                            <li data-i18n="pricing.heritageF1">Toutes les prestations ÉCLAT</li>
+                            <li data-i18n="pricing.heritageF2">Shooting extérieur</li>
+                            <li data-i18n="pricing.heritageF3">Getting Ready</li>
+                            <li data-i18n="pricing.heritageF4">3 Reels Instagram / TikTok</li>
+                            <li data-i18n="pricing.heritageF5">Photobook Premium (30×30 cm)</li>
                         </ul>
-                        <a href="#contact" class="pricing-btn">Book Now</a>
+                        <a href="#contact" class="pricing-btn" data-i18n="pricing.bookNow">Book Now</a>
                     </div>
                 </div>
                 <div class="col">
                     <div class="pricing-card" data-reveal="up" data-delay="200">
-                        <h3 class="pricing-name">Collection SIGNATURE</h3>
+                        <h3 class="pricing-name" data-i18n="pricing.signature">Collection SIGNATURE</h3>
                         <div class="pricing-amount">1 790 DT</div>
-                        <p class="pricing-sub">L'expérience la plus complète.</p>
+                        <p class="pricing-sub" data-i18n="pricing.signatureSub">L'expérience la plus complète.</p>
                         <ul class="pricing-features">
-                            <li>Toutes les prestations HÉRITAGE</li>
-                            <li>Deuxième photographe</li>
-                            <li>Deuxième vidéaste</li>
-                            <li>Drone 4K</li>
-                            <li>Film cinématographique Premium</li>
+                            <li data-i18n="pricing.signatureF1">Toutes les prestations HÉRITAGE</li>
+                            <li data-i18n="pricing.signatureF2">Deuxième photographe</li>
+                            <li data-i18n="pricing.signatureF3">Deuxième vidéaste</li>
+                            <li data-i18n="pricing.signatureF4">Drone 4K</li>
+                            <li data-i18n="pricing.signatureF5">Film cinématographique Premium</li>
                         </ul>
-                        <a href="#contact" class="pricing-btn">Book Now</a>
+                        <a href="#contact" class="pricing-btn" data-i18n="pricing.bookNow">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -425,48 +431,48 @@
 
         <!-- Prestations Individuelles -->
         <div class="container mb-5">
-            <h3 class="pricing-table-title">Prestations</h3>
+            <h3 class="pricing-table-title" data-i18n="pricing.prestations">Prestations</h3>
             <div class="pricing-table">
-                <div class="pricing-table-row"><span>Teaser (1-3 min)</span><span class="price">300 DT</span></div>
-                <div class="pricing-table-row"><span>Pack 3 Reels</span><span class="price">300 DT</span></div>
-                <div class="pricing-table-row"><span>Reel supplémentaire</span><span class="price">120 DT</span></div>
-                <div class="pricing-table-row"><span>Shooting extérieur</span><span class="price">220 DT</span></div>
-                <div class="pricing-table-row"><span>Getting Ready</span><span class="price">200 DT</span></div>
-                <div class="pricing-table-row"><span>Pack Shooting + Getting Ready</span><span class="price">330 DT</span></div>
-                <div class="pricing-table-row"><span>Engagement / Pre-Wedding</span><span class="price">350 DT</span></div>
-                <div class="pricing-table-row"><span>Outia / Henna</span><span class="price">600 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pTeaser">Teaser (1-3 min)</span><span class="price">300 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pPack3">Pack 3 Reels</span><span class="price">300 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pReelSup">Reel supplémentaire</span><span class="price">120 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pShooting">Shooting extérieur</span><span class="price">220 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pGettingReady">Getting Ready</span><span class="price">200 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pPackSG">Pack Shooting + Getting Ready</span><span class="price">330 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pEngagement">Engagement / Pre-Wedding</span><span class="price">350 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pOutia">Outia / Henna</span><span class="price">600 DT</span></div>
             </div>
         </div>
 
         <!-- Options Premium -->
         <div class="container mb-5">
-            <h3 class="pricing-table-title">Options Premium</h3>
+            <h3 class="pricing-table-title" data-i18n="pricing.premium">Options Premium</h3>
             <div class="pricing-table">
-                <div class="pricing-table-row"><span>Deuxième Photographe</span><span class="price">250 DT</span></div>
-                <div class="pricing-table-row"><span>Deuxième Vidéaste</span><span class="price">250 DT</span></div>
-                <div class="pricing-table-row"><span>Drone 4K</span><span class="price">600 DT</span></div>
-                <div class="pricing-table-row"><span>Content Creator</span><span class="price">200 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pPremium1">Deuxième Photographe</span><span class="price">250 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pPremium2">Deuxième Vidéaste</span><span class="price">250 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pPremium3">Drone 4K</span><span class="price">600 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pPremium4">Content Creator</span><span class="price">200 DT</span></div>
             </div>
         </div>
 
         <!-- Productions Commerciales -->
         <div class="container">
-            <h3 class="pricing-table-title">Productions Commerciales</h3>
+            <h3 class="pricing-table-title" data-i18n="pricing.commercial">Productions Commerciales</h3>
             <div class="pricing-table">
-                <div class="pricing-table-row"><span>Restaurant / Café</span><span class="price">350 DT</span></div>
-                <div class="pricing-table-row"><span>Boutique / Commerce</span><span class="price">400 DT</span></div>
-                <div class="pricing-table-row"><span>Vidéo Automobile</span><span class="price">350 DT</span></div>
-                <div class="pricing-table-row"><span>Reel Publicitaire</span><span class="price">250 DT</span></div>
-                <div class="pricing-table-row"><span>Vidéo Publicitaire Premium</span><span class="price">À partir de 700 DT</span></div>
-                <div class="pricing-table-row"><span>Événement (2 h)</span><span class="price">450 DT</span></div>
-                <div class="pricing-table-row"><span>Demi-journée (4 h)</span><span class="price">650 DT</span></div>
-                <div class="pricing-table-row"><span>Journée complète (8 h)</span><span class="price">1 100 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm1">Restaurant / Café</span><span class="price">350 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm2">Boutique / Commerce</span><span class="price">400 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm3">Vidéo Automobile</span><span class="price">350 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm4">Reel Publicitaire</span><span class="price">250 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm5">Vidéo Publicitaire Premium</span><span class="price">À partir de 700 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm6">Événement (2 h)</span><span class="price">450 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm7">Demi-journée (4 h)</span><span class="price">650 DT</span></div>
+                <div class="pricing-table-row"><span data-i18n="pricing.pComm8">Journée complète (8 h)</span><span class="price">1 100 DT</span></div>
             </div>
         </div>
 
         <div class="container text-center" style="margin-top: 3rem;">
             <a href="#contact" class="pricing-cta-big">
-                <span>Réservez Maintenant</span>
+                <span data-i18n="pricing.reserveBtn">Réservez Maintenant</span>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -477,19 +483,132 @@
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="section-header">
-            <span class="section-label">Portfolio</span>
-            <h2 class="section-title">My Work</h2>
-            <p class="gallery-subtitle">Explore my creative universe through my various productions</p>
+            <span class="section-label" data-i18n="gallery.label">Portfolio</span>
+            <h2 class="section-title" data-i18n="gallery.title">My Work</h2>
+            <p class="gallery-subtitle" data-i18n="gallery.subtitle">Explore my creative universe through my various productions</p>
         </div>
 
-        <div class="container text-center">
+        <div class="container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Collection Héritage">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/weedding/IMG_2017.jpg" alt="Wedding Photography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
+                        <h3 data-i18n="gallery.p1">Collection Héritage</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Collection Éclat">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/weedding/IMG_2306.jpg" alt="Wedding Videography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
+                        <h3 data-i18n="gallery.p2">Collection Éclat</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Romantic Details">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/weedding/IMG_2028.jpg" alt="Wedding Details" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
+                        <h3 data-i18n="gallery.p3">Romantic Details</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Getting Ready">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/weedding/IMG_2049.jpg" alt="Getting Ready" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
+                        <h3 data-i18n="gallery.p4">Getting Ready</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Sport" data-title="Olympique Béja">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/JAW LKOL/sport/20250904071452_IMG_3961.jpg" alt="Sports Photography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catSport">Sport</span>
+                        <h3 data-i18n="gallery.p5">Olympique Béja</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Sport" data-title="Match Action">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/JAW LKOL/sport/20250904072446_IMG_3969.jpg" alt="Match Action" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catSport">Sport</span>
+                        <h3 data-i18n="gallery.p6">Match Action</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Sport" data-title="Team Spirit">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/JAW LKOL/sport/20250906144613_IMG_4639.jpg" alt="Team Spirit" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catSport">Sport</span>
+                        <h3 data-i18n="gallery.p7">Team Spirit</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Event" data-title="Festival Bellarejia">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/JAW LKOL/event/IMG_0283.jpg" alt="Event Photography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catEvent">Event</span>
+                        <h3 data-i18n="gallery.p8">Festival Bellarejia</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Event" data-title="Cultural Night">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/JAW LKOL/event/IMG_0288.jpg" alt="Cultural Event" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catEvent">Event</span>
+                        <h3 data-i18n="gallery.p9">Cultural Night</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Commercial" data-title="Product Visual">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/Ads/20251201160823_IMG_8009.jpg" alt="Commercial Photography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catCommercial">Commercial</span>
+                        <h3 data-i18n="gallery.p10">Product Visual</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Commercial" data-title="Brand Story">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/Ads/20251201161351_IMG_8034.jpg" alt="Brand Photography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catCommercial">Commercial</span>
+                        <h3 data-i18n="gallery.p11">Brand Story</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Portrait" data-title="Studio Session">
+                    <div class="portfolio-image">
+                        <img src="mouhanedworks/JAW LKOL/pthers/20251201160534_IMG_7995.jpg" alt="Portrait Photography" loading="lazy">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category" data-i18n="gallery.catPortrait">Portrait</span>
+                        <h3 data-i18n="gallery.p12">Studio Session</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center" style="margin-top: 3rem;">
             <a href="/works" class="contact-cta-btn" style="display: inline-flex; align-items: center; gap: 0.6rem;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <polyline points="21 15 16 10 5 21"/>
                 </svg>
-                View All Works
+                <span data-i18n="gallery.viewAll">View All Works</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
@@ -500,9 +619,9 @@
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="section-header">
-            <span class="section-label">Kind Words</span>
-            <h2 class="section-title">What Clients Say</h2>
-            <p class="gallery-subtitle">Real feedback from people I've worked with</p>
+            <span class="section-label" data-i18n="testimonials.label">Kind Words</span>
+            <h2 class="section-title" data-i18n="testimonials.title">What Clients Say</h2>
+            <p class="gallery-subtitle" data-i18n="testimonials.subtitle">Real feedback from people I've worked with</p>
         </div>
         <div class="testimonials-slider" id="testimonialSlider">
             <div class="testimonial-card active">
@@ -513,14 +632,14 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
-                <p class="testimonial-text">"Mouhaned captured our wedding day perfectly. His attention to detail and ability to be everywhere at once while staying completely unobtrusive was remarkable. The highlights film still makes us emotional every time we watch it."</p>
+                <p class="testimonial-text" data-i18n="testimonials.t1">"Mouhaned captured our wedding day perfectly. His attention to detail and ability to be everywhere at once while staying completely unobtrusive was remarkable. The highlights film still makes us emotional every time we watch it."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     </div>
                     <div>
-                        <strong>Sarah &amp; Mehdi</strong>
-                        <span>Wedding Clients</span>
+                        <strong data-i18n="testimonials.author1">Sarah &amp; Mehdi</strong>
+                        <span data-i18n="testimonials.role1">Wedding Clients</span>
                     </div>
                 </div>
             </div>
@@ -532,14 +651,14 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
-                <p class="testimonial-text">"Working with Mouhaned on our music video was an incredible experience. He understood our creative vision immediately and brought ideas we never even thought of. The final result exceeded all expectations."</p>
+                <p class="testimonial-text" data-i18n="testimonials.t2">"Working with Mouhaned on our music video was an incredible experience. He understood our creative vision immediately and brought ideas we never even thought of. The final result exceeded all expectations."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     </div>
                     <div>
-                        <strong>Yassin — Artist</strong>
-                        <span>Music Video Client</span>
+                        <strong data-i18n="testimonials.author2">Yassin — Artist</strong>
+                        <span data-i18n="testimonials.role2">Music Video Client</span>
                     </div>
                 </div>
             </div>
@@ -551,14 +670,14 @@
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                 </div>
-                <p class="testimonial-text">"Professional, creative, and incredibly talented. Mouhaned covered our annual corporate gala and the results were stunning. He has a natural ability to capture the energy of an event."</p>
+                <p class="testimonial-text" data-i18n="testimonials.t3">"Professional, creative, and incredibly talented. Mouhaned covered our annual corporate gala and the results were stunning. He has a natural ability to capture the energy of an event."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     </div>
                     <div>
-                        <strong>Ines — Event Director</strong>
-                        <span>Corporate Event Client</span>
+                        <strong data-i18n="testimonials.author3">Ines — Event Director</strong>
+                        <span data-i18n="testimonials.role3">Corporate Event Client</span>
                     </div>
                 </div>
             </div>
@@ -575,9 +694,9 @@
         <div class="contact-bg-orb"></div>
         <div class="contact-content">
             <div class="section-header" style="margin-bottom: 2rem;">
-                <span class="section-label">Get in Touch</span>
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="gallery-subtitle">Have a project in mind? I'd love to hear about it. Reach out and let's create something great.</p>
+                <span class="section-label" data-i18n="contact.label">Get in Touch</span>
+                <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
+                <p class="gallery-subtitle" data-i18n="contact.subtitle">Have a project in mind? I'd love to hear about it. Reach out and let's create something great.</p>
             </div>
         </div>
         <div class="container">
@@ -592,7 +711,7 @@
                                 </svg>
                             </div>
                             <div class="contact-card-text">
-                                <strong>Email</strong>
+                                <strong data-i18n="contact.emailLabel">Email</strong>
                                 <span>mouvisions@gmail.com</span>
                             </div>
                         </div>
@@ -607,7 +726,7 @@
                                 </svg>
                             </div>
                             <div class="contact-card-text">
-                                <strong>Phone</strong>
+                                <strong data-i18n="contact.phoneLabel">Phone</strong>
                                 <span>+216 27 912 707</span>
                             </div>
                         </div>
@@ -615,7 +734,7 @@
                 </div>
             </div>
             <div class="contact-social-row">
-            <span>Follow me</span>
+            <span data-i18n="contact.follow">Follow me</span>
             <div class="contact-social-icons">
                 <a href="https://www.facebook.com/profile.php?id=100044547484565" class="social-link facebook" title="Facebook" target="_blank" rel="noopener">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -630,13 +749,13 @@
             </div>
         </div>
         <div class="contact-cta">
-            <p>Ready to start your project? Send me an email and let's talk.</p>
+            <p data-i18n="contact.ctaText">Ready to start your project? Send me an email and let's talk.</p>
             <a href="mailto:mouvisions@gmail.com" class="contact-cta-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                 </svg>
-                <span>Send an Email</span>
+                <span data-i18n="contact.ctaBtn">Send an Email</span>
             </a>
         </div>
     </section>
@@ -657,7 +776,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 <span>mouvision.me</span> — Content Creator · FR / AR / EN. All rights reserved.</p>
+        <p data-i18n="footer.rights">&copy; 2026 <span>mouvision.me</span> — Content Creator · FR / AR / EN. All rights reserved.</p>
+        <a href="https://github.com/rayenkhlifi" target="_blank" rel="noopener" class="dev-credit">Dev @Rayen Khlifi</a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
