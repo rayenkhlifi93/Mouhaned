@@ -105,9 +105,9 @@
             'services.label': 'What I Do',
             'services.title': 'My Services',
             'services.subtitle': 'Professional visual storytelling tailored to your vision',
-            'services.videoTitle': 'Editing Videos Maker',
+            'services.videoTitle': 'Video Editor',
             'services.videoDesc': 'Professional video editing with cinematic transitions, color grading, and precise storytelling to bring your footage to life.',
-            'services.photoTitle': 'Photos Shooter',
+            'services.photoTitle': 'Photographer',
             'services.photoDesc': 'High-quality photography for events, portraits, and commercial projects with a keen eye for light and composition.',
             'services.graphicTitle': 'Graphic Designer',
             'services.graphicDesc': 'Creative graphic design services including branding, thumbnails, social media visuals, and custom artwork.',
@@ -200,7 +200,7 @@
             'contact.ctaBtn': 'Send an Email',
             'contact.emailLabel': 'Email',
             'contact.phoneLabel': 'Phone',
-            'footer.rights': '© 2026 mouvision.me — Content Creator · FR / EN. All rights reserved.',
+            'footer.rights': '© 2026 mouvision.me — Content Creator. All rights reserved.',
             'works.title': 'All Works',
             'works.subtitle': 'Browse through my complete collection of projects',
         },
@@ -356,7 +356,7 @@
             'contact.ctaBtn': 'Envoyer un Email',
             'contact.emailLabel': 'Email',
             'contact.phoneLabel': 'Téléphone',
-            'footer.rights': '© 2026 mouvision.me — Créateur de Contenu · FR / EN. Tous droits réservés.',
+            'footer.rights': '© 2026 mouvision.me — Créateur de Contenu. Tous droits réservés.',
             'works.title': 'Tous les Travaux',
             'works.subtitle': 'Parcourez ma collection complète de projets',
         }
@@ -445,25 +445,12 @@
     // ===== HEADER SCROLL =====
     const header = document.getElementById('header');
     const scrollTop = document.getElementById('scrollTop');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('section[id]');
-
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
 
-        // Scroll-to-top button
-        scrollTop.classList.toggle('visible', scrollY > 400);
+        header.classList.toggle('scrolled', scrollY > 50);
 
-        // Active nav link
-        sections.forEach(section => {
-            const top = section.offsetTop - 120;
-            const bottom = top + section.offsetHeight;
-            if (scrollY >= top && scrollY < bottom) {
-                navLinks.forEach(a => a.classList.remove('active'));
-                const active = document.querySelector(`.nav-links a[href="#${section.id}"]`);
-                if (active) active.classList.add('active');
-            }
-        });
+        scrollTop.classList.toggle('visible', scrollY > 400);
     }, { passive: true });
 
     scrollTop.addEventListener('click', () => {

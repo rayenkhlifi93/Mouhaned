@@ -79,28 +79,7 @@
     <header id="header">
         <nav>
             <a href="./" class="logo" id="logoLink">mouvision.me</a>
-            <ul class="nav-links">
-                <li><a href="#about" data-i18n="nav.about">About Me</a></li>
-                <li><a href="#services" data-i18n="nav.expertise">Expertise</a></li>
-                <li><a href="#pricing" data-i18n="nav.tarifs">Tarifs</a></li>
-                <li><a href="#gallery" data-i18n="nav.portfolio">Portfolio</a></li>
-                <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
-                <li><a href="#contact" data-i18n="nav.talk">Let's Talk</a></li>
-            </ul>
             <div class="nav-right">
-                <div class="lang-switcher" id="langSwitcher">
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button class="lang-btn active" data-lang="fr">FR</button>
-                </div>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"/>
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                    </svg>
-                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                    </svg>
-                </button>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
                     <span></span>
                     <span></span>
@@ -194,8 +173,8 @@
                             </svg>
                         </div>
                         <h3 data-i18n="exp1.title">Media Manager – Bellaregia Festival</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp1.date">Tunisia · 2021–2023</p>
-                        <p style="font-size: 0.9rem;" data-i18n="exp1.desc">Supervised digital and visual content strategy for one of Tunisia's leading cultural festivals.</p>
+                        <p class="exp-date" data-i18n="exp1.date">Tunisia · 2021–2023</p>
+                        <p class="exp-desc" data-i18n="exp1.desc">Supervised digital and visual content strategy for one of Tunisia's leading cultural festivals.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -207,8 +186,8 @@
                             </svg>
                         </div>
                         <h3 data-i18n="exp2.title">Media Manager – Chemtou Festival</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp2.date">Tunisia · 2022–2024</p>
-                        <p style="font-size: 0.9rem;" data-i18n="exp2.desc">Produced multimedia content and managed social media engagement for this historic festival.</p>
+                        <p class="exp-date" data-i18n="exp2.date">Tunisia · 2022–2024</p>
+                        <p class="exp-desc" data-i18n="exp2.desc">Produced multimedia content and managed social media engagement for this historic festival.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -221,8 +200,8 @@
                             </svg>
                         </div>
                         <h3 data-i18n="exp3.title">Media Manager – Mouloudia Boussalem Volleyball</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp3.date">Tunisia · 2022–2023</p>
-                        <p style="font-size: 0.9rem;" data-i18n="exp3.desc">Managed media operations during the African championship season for this top-tier club.</p>
+                        <p class="exp-date" data-i18n="exp3.date">Tunisia · 2022–2023</p>
+                        <p class="exp-desc" data-i18n="exp3.desc">Managed media operations during the African championship season for this top-tier club.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -235,8 +214,8 @@
                             </svg>
                         </div>
                         <h3 data-i18n="exp4.title">Media Manager – US Boussalem</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp4.date">Tunisia · 2022–2023</p>
-                        <p style="font-size: 0.9rem;" data-i18n="exp4.desc">Coordinated digital communication and media strategy for the sports club.</p>
+                        <p class="exp-date" data-i18n="exp4.date">Tunisia · 2022–2023</p>
+                        <p class="exp-desc" data-i18n="exp4.desc">Coordinated digital communication and media strategy for the sports club.</p>
                     </div>
                 </div>
                 <div class="col">
@@ -248,8 +227,8 @@
                             </svg>
                         </div>
                         <h3 data-i18n="exp5.title">Photographer – Olympique Béja</h3>
-                        <p style="color: var(--accent); font-weight: 600; font-size: 0.85rem; margin: -0.8rem 0 0.8rem;" data-i18n="exp5.date">Tunisia · 2025–2026</p>
-                        <p style="font-size: 0.9rem;" data-i18n="exp5.desc">Official photographer for one of Tunisia's premier football clubs, capturing match action and team imagery.</p>
+                        <p class="exp-date" data-i18n="exp5.date">Tunisia · 2025–2026</p>
+                        <p class="exp-desc" data-i18n="exp5.desc">Official photographer for one of Tunisia's premier football clubs, capturing match action and team imagery.</p>
                     </div>
                 </div>
             </div>
@@ -309,12 +288,12 @@
                     <span data-i18n="cert5.org">Stages in Jordan, Morocco &amp; Tunisia</span>
                 </div>
             </div>
-            <div class="contact-card" style="width: 100%; max-width: 100%; border-color: var(--border-accent);">
+            <div class="contact-card" style="width: 100%; max-width: 100%;">
                 <div class="contact-card-icon" style="width: 36px; height: 36px; flex-shrink: 0;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                 </div>
                 <div class="contact-card-text" style="text-align: left;">
-                    <strong style="color: var(--accent);" data-i18n="cert6.title">Peace Ambassador</strong>
+                    <strong data-i18n="cert6.title">Peace Ambassador</strong>
                     <span data-i18n="cert6.org">Peace First</span>
                 </div>
             </div>
@@ -338,7 +317,7 @@
                                 <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
                             </svg>
                         </div>
-                        <h3 data-i18n="services.videoTitle">Editing Videos Maker</h3>
+                        <h3 data-i18n="services.videoTitle">Video Editor</h3>
                         <p data-i18n="services.videoDesc">Professional video editing with cinematic transitions, color grading, and precise storytelling to bring your footage to life.</p>
                     </div>
                 </div>
@@ -350,7 +329,7 @@
                                 <circle cx="12" cy="13" r="4" />
                             </svg>
                         </div>
-                        <h3 data-i18n="services.photoTitle">Photos Shooter</h3>
+                        <h3 data-i18n="services.photoTitle">Photographer</h3>
                         <p data-i18n="services.photoDesc">High-quality photography for events, portraits, and commercial projects with a keen eye for light and composition.</p>
                     </div>
                 </div>
@@ -491,7 +470,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Collection Héritage">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/weedding/IMG_2017.jpg" alt="Wedding Photography" loading="lazy">
+                        <img src="mouhanedworks/wedding/IMG_2017.jpg" alt="Wedding Photography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
@@ -500,7 +479,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Collection Éclat">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/weedding/IMG_2306.jpg" alt="Wedding Videography" loading="lazy">
+                        <img src="mouhanedworks/wedding/IMG_2306.jpg" alt="Wedding Videography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
@@ -509,7 +488,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Romantic Details">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/weedding/IMG_2028.jpg" alt="Wedding Details" loading="lazy">
+                        <img src="mouhanedworks/wedding/IMG_2028.jpg" alt="Wedding Details" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
@@ -518,7 +497,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Wedding" data-title="Getting Ready">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/weedding/IMG_2049.jpg" alt="Getting Ready" loading="lazy">
+                        <img src="mouhanedworks/wedding/IMG_2049.jpg" alt="Getting Ready" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catWedding">Wedding</span>
@@ -527,7 +506,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Sport" data-title="Olympique Béja">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/JAW LKOL/sport/20250904071452_IMG_3961.jpg" alt="Sports Photography" loading="lazy">
+                        <img src="mouhanedworks/sport/20250904071452_IMG_3961.jpg" alt="Sports Photography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catSport">Sport</span>
@@ -536,7 +515,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Sport" data-title="Match Action">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/JAW LKOL/sport/20250904072446_IMG_3969.jpg" alt="Match Action" loading="lazy">
+                        <img src="mouhanedworks/sport/20250904072446_IMG_3969.jpg" alt="Match Action" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catSport">Sport</span>
@@ -545,7 +524,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Sport" data-title="Team Spirit">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/JAW LKOL/sport/20250906144613_IMG_4639.jpg" alt="Team Spirit" loading="lazy">
+                        <img src="mouhanedworks/sport/20250906144613_IMG_4639.jpg" alt="Team Spirit" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catSport">Sport</span>
@@ -554,7 +533,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Event" data-title="Festival Bellarejia">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/JAW LKOL/event/IMG_0283.jpg" alt="Event Photography" loading="lazy">
+                        <img src="mouhanedworks/event/IMG_0283.jpg" alt="Event Photography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catEvent">Event</span>
@@ -563,7 +542,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Event" data-title="Cultural Night">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/JAW LKOL/event/IMG_0288.jpg" alt="Cultural Event" loading="lazy">
+                        <img src="mouhanedworks/event/IMG_0288.jpg" alt="Cultural Event" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catEvent">Event</span>
@@ -572,7 +551,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Commercial" data-title="Product Visual">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/Ads/20251201160823_IMG_8009.jpg" alt="Commercial Photography" loading="lazy">
+                        <img src="mouhanedworks/commercial/20251201160823_IMG_8009.jpg" alt="Commercial Photography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catCommercial">Commercial</span>
@@ -581,7 +560,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Commercial" data-title="Brand Story">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/Ads/20251201161351_IMG_8034.jpg" alt="Brand Photography" loading="lazy">
+                        <img src="mouhanedworks/commercial/20251201161351_IMG_8034.jpg" alt="Brand Photography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catCommercial">Commercial</span>
@@ -590,7 +569,7 @@
                 </div>
                 <div class="portfolio-item" data-reveal="up" style="display:none" data-category="Portrait" data-title="Studio Session">
                     <div class="portfolio-image">
-                        <img src="mouhanedworks/JAW LKOL/pthers/20251201160534_IMG_7995.jpg" alt="Portrait Photography" loading="lazy">
+                        <img src="mouhanedworks/portrait/20251201160534_IMG_7995.jpg" alt="Portrait Photography" loading="lazy">
                     </div>
                     <div class="portfolio-overlay">
                         <span class="portfolio-category" data-i18n="gallery.catPortrait">Portrait</span>
@@ -770,13 +749,30 @@
     <!-- Toast -->
     <div class="toast" id="toast"></div>
 
+    <!-- Theme Toggle -->
+    <button class="theme-toggle-fixed" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
     <!-- Scroll to Top -->
     <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
 
     <!-- Footer -->
     <footer>
-        <p data-i18n="footer.rights">&copy; 2026 <span>mouvision.me</span> — Content Creator · FR / EN. All rights reserved.</p>
-        <a href="https://github.com/rayenkhlifi" target="_blank" rel="noopener" class="dev-credit">Dev @Rayen Khlifi</a>
+        <div class="footer-content">
+            <div class="lang-switcher" id="langSwitcher">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn active" data-lang="fr">FR</button>
+            </div>
+            <p data-i18n="footer.rights">&copy; 2026 <span>mouvision.me</span> — Content Creator. All rights reserved.</p>
+            <a href="https://www.instagram.com/rayeenkh_" target="_blank" rel="noopener" class="dev-credit">Dev @Rayen Khlifi</a>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
