@@ -55,10 +55,10 @@
             'nav.portfolio': 'Portfolio',
             'nav.testimonials': 'Testimonials',
             'nav.talk': 'Let\'s Talk',
-            'about.titleHighlight': 'Videographer &',
-            'about.titleRest': 'Photographer',
-            'about.desc1': 'Trilingual content creator (FR / AR / EN) with 4+ years in graphic design, video production, photography, and digital media. I\'ve collaborated with national and international initiatives, bringing creative and strategic expertise to amplify their visibility and impact.',
-            'about.desc2': 'Official photographer for multiple sports teams, skilled in capturing dynamic, professional imagery that elevates athletic performance and identity. As a media manager for festivals and sports clubs, I combine artistic vision with strategic communication to produce engaging, trend-aware content.',
+            'about.titleHighlight': 'Creative Photographer &',
+            'about.titleRest': 'Filmmaker & Multimedia Storyteller',
+            'about.desc1': 'With over 4 years of experience in photography, filmmaking, graphic design, and digital media, I transform ideas into compelling visual stories that engage audiences and elevate brands. Currently in my second year specializing in Film Directing at ISAMM, I combine academic training in cinematic storytelling with hands-on experience across commercial, cultural, and sports projects.',
+            'about.desc2': 'I\'ve collaborated with national and international initiatives, delivering creative strategies and high-quality visual content that strengthens communication and maximizes impact. As the official photographer for multiple sports teams and a media manager for festivals and sports clubs, I create dynamic imagery and trend-driven content that captures emotion, performance, and authentic moments while building a strong digital presence.',
             'about.skill1': 'Graphic Design',
             'about.skill2': 'Video Production',
             'about.skill3': 'Photography',
@@ -211,10 +211,10 @@
             'nav.portfolio': 'Portfolio',
             'nav.testimonials': 'Témoignages',
             'nav.talk': 'Contactez-moi',
-            'about.titleHighlight': 'Vidéaste &',
-            'about.titleRest': 'Photographe',
-            'about.desc1': 'Créateur de contenu trilingue (FR / AR / EN) avec plus de 4 ans d\'expérience en design graphique, production vidéo, photographie et médias numériques. J\'ai collaboré avec des initiatives nationales et internationales, apportant une expertise créative et stratégique pour amplifier leur visibilité et leur impact.',
-            'about.desc2': 'Photographe officiel de plusieurs équipes sportives, spécialisé dans la capture d\'images dynamiques et professionnelles qui subliment la performance et l\'identité athlétique. En tant que responsable média pour des festivals et clubs sportifs, je combine vision artistique et communication stratégique pour produire du contenu engageant et tendance.',
+            'about.titleHighlight': 'Photographe Créatif &',
+            'about.titleRest': 'Cinéaste & Contenu Multimédia',
+            'about.desc1': 'Avec plus de 4 ans d\'expérience en photographie, cinématographie, design graphique et médias numériques, je transforme des idées en récits visuels captivants qui engagent le public et valorisent les marques. Actuellement en deuxième année de spécialisation en Réalisation de Film à l\'ISAMM, je combine une formation académique en storytelling cinématographique avec une expérience pratique dans des projets commerciaux, culturels et sportifs.',
+            'about.desc2': 'J\'ai collaboré avec des initiatives nationales et internationales, en offrant des stratégies créatives et un contenu visuel de haute qualité qui renforce la communication et maximise l\'impact. En tant que photographe officiel de plusieurs équipes sportives et responsable média pour des festivals et clubs sportifs, je crée des images dynamiques et un contenu tendance qui capture les émotions, la performance et les moments authentiques tout en construisant une forte présence numérique.',
             'about.skill1': 'Design Graphique',
             'about.skill2': 'Production Vidéo',
             'about.skill3': 'Photographie',
@@ -370,45 +370,12 @@
         document.documentElement.setAttribute('lang', lang);
 
         const elements = document.querySelectorAll('[data-i18n]');
-        const batchSize = 8;
-        let i = 0;
-
-        function fadeOutBatch() {
-            const batch = Array.from(elements).slice(i, i + batchSize);
-            batch.forEach(el => el.classList.add('lang-fade-out'));
-            i += batchSize;
-            if (i < elements.length) {
-                requestAnimationFrame(() => setTimeout(fadeOutBatch, 25));
-            } else {
-                setTimeout(() => {
-                    elements.forEach(el => {
-                        const key = el.getAttribute('data-i18n');
-                        if (translations[lang] && translations[lang][key]) {
-                            el.textContent = translations[lang][key];
-                        }
-                    });
-                    i = 0;
-                    fadeInBatch();
-                }, 180);
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
             }
-        }
-
-        function fadeInBatch() {
-            const batch = Array.from(elements).slice(i, i + batchSize);
-            batch.forEach((el, idx) => {
-                setTimeout(() => {
-                    el.classList.remove('lang-fade-out');
-                    el.classList.add('lang-fade-in');
-                    setTimeout(() => el.classList.remove('lang-fade-in'), 350);
-                }, idx * 30);
-            });
-            i += batchSize;
-            if (i < elements.length) {
-                requestAnimationFrame(() => setTimeout(fadeInBatch, 25));
-            }
-        }
-
-        fadeOutBatch();
+        });
 
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
@@ -429,9 +396,6 @@
     const scrollTop = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-
-        header.classList.toggle('scrolled', scrollY > 50);
-
         scrollTop.classList.toggle('visible', scrollY > 400);
     }, { passive: true });
 
@@ -692,6 +656,27 @@
                 item.classList.add('revealed');
             }, 300 + (i * 120));
         });
+    }
+
+    // ===== TITLE CYCLE ANIMATION =====
+    const titleCycle = document.getElementById('titleCycle');
+    if (titleCycle) {
+        const words = ['Creative Photographer', 'Filmmaker', 'Multimedia Storyteller'];
+        let wordIndex = 0;
+
+        function updateWord() {
+            titleCycle.style.opacity = '0';
+            titleCycle.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                wordIndex = (wordIndex + 1) % words.length;
+                titleCycle.textContent = words[wordIndex];
+                titleCycle.style.opacity = '1';
+                titleCycle.style.transform = 'translateY(0)';
+            }, 400);
+        }
+
+        titleCycle.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        setInterval(updateWord, 5000);
     }
 
     // ===== MAGNETIC BUTTONS =====
