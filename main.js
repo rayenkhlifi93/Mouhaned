@@ -658,25 +658,19 @@
         });
     }
 
-    // ===== TITLE CYCLE ANIMATION =====
-    const titleCycle = document.getElementById('titleCycle');
+    // ===== TITLE CYCLE =====
+    const titleCycle = document.querySelector('.title-cycle');
     if (titleCycle) {
         const words = ['Creative Photographer', 'Filmmaker', 'Multimedia Storyteller'];
-        let wordIndex = 0;
-
-        function updateWord() {
+        let i = 0;
+        setInterval(() => {
+            i = (i + 1) % words.length;
             titleCycle.style.opacity = '0';
-            titleCycle.style.transform = 'translateY(-20px)';
             setTimeout(() => {
-                wordIndex = (wordIndex + 1) % words.length;
-                titleCycle.textContent = words[wordIndex];
+                titleCycle.textContent = words[i];
                 titleCycle.style.opacity = '1';
-                titleCycle.style.transform = 'translateY(0)';
-            }, 400);
-        }
-
-        titleCycle.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        setInterval(updateWord, 5000);
+            }, 300);
+        }, 2500);
     }
 
     // ===== MAGNETIC BUTTONS =====

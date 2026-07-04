@@ -138,7 +138,6 @@ body::after {
     align-items: center;
     justify-content: center;
     z-index: 99990;
-    gap: 1.8rem;
     transition: opacity 0.5s ease, visibility 0.5s, transform 0.5s ease;
 }
 
@@ -149,6 +148,7 @@ body::after {
     transform: scale(1.05);
 }
 
+/* ── LOADER WAVE ── */
 .loading-logo {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2.4rem;
@@ -553,19 +553,21 @@ nav {
     display: inline-block;
     overflow: hidden;
     vertical-align: bottom;
-    height: 1.15em;
-    line-height: 1.15;
+    height: 1.25em;
+    line-height: 1.25;
     position: relative;
 }
 
 .title-cycle {
     display: inline-block;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+    background: linear-gradient(135deg, var(--accent, #d4af37) 0%, var(--accent-2, #f3e5ab) 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    padding-right: 4px;
+    transition: opacity 0.3s ease;
 }
 
 .title-cycle-sub {
@@ -1437,39 +1439,6 @@ nav {
     transform: translateY(0);
 }
 
-.lang-switcher {
-    position: relative;
-    overflow: hidden;
-}
-
-.lang-btn {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.lang-btn:active {
-    transform: scale(0.92);
-}
-
-@keyframes langRipple {
-    0% { transform: scale(0); opacity: 0.6; }
-    100% { transform: scale(4); opacity: 0; }
-}
-
-.lang-btn::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent);
-    border-radius: 50%;
-    transform: scale(0);
-    opacity: 0;
-    pointer-events: none;
-}
-
-.lang-btn:active::after {
-    animation: langRipple 0.5s ease-out;
-}
-
 /* ── FOOTER ── */
 footer {
     background: transparent;
@@ -2154,15 +2123,34 @@ a:focus-visible {
     position: absolute;
     top: 14px;
     right: 14px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    color: white;
-    padding: 0.25rem 0.9rem;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    background-color: #d4af37;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
     text-transform: uppercase;
     z-index: 1;
+    animation: professionalShake 8s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes professionalShake {
+    0%, 85%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    88% {
+        transform: scale(1.05) rotate(-3deg);
+    }
+    91% {
+        transform: scale(1.05) rotate(3deg);
+    }
+    94% {
+        transform: scale(1.05) rotate(-2deg);
+    }
+    97% {
+        transform: scale(1.05) rotate(2deg);
+    }
 }
 
 .pricing-name {
@@ -2398,8 +2386,6 @@ a:focus-visible {
     .pricing-cta-big {
         padding: 0.9rem 2.2rem;
         font-size: 1rem;
-        width: 100%;
-        justify-content: center;
     }
 }
 
@@ -2494,8 +2480,6 @@ a:focus-visible {
     .pricing-cta-big {
         padding: 0.8rem 1.8rem;
         font-size: 0.92rem;
-        width: 100%;
-        justify-content: center;
     }
 }
 
